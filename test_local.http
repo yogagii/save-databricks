@@ -3,7 +3,7 @@ POST http://localhost:3009/savedatabricks
 Content-Type: application/json
 
 {
-  "data": [{ "name": "Yoga", "age": 24 }]
+  "data": [{ "name": "Yoga", "age": 18 }]
 }
 
 ### get

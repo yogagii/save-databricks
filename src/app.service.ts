@@ -10,7 +10,7 @@ export class AppService {
   }
 
   getAll(): string {
-    const result = readFileSync(`${process.cwd()}/data/data.txt`).toString();
+    const result = readFileSync(`${process.cwd()}/data/data.json`).toString();
     console.log(typeof result);
     console.log('data:', result);
     return result;
