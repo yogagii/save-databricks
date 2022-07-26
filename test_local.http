@@ -1,0 +1,11 @@
+### save
+POST http://localhost:3009/savedatabricks
+Content-Type: application/json
+
+{
+  "data": [{ "name": "Yoga", "age": 24 }]
+}
+
+### get
+GET http://localhost:3009/getdatabricks
+Content-Type: application/json
