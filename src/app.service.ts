@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { writeFileSync, readFileSync } from 'fs';
-import * as data from '../data/data.json';
 
 @Injectable()
 export class AppService {
