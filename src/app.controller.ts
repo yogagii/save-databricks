@@ -12,7 +12,7 @@ export class AppController {
   }
 
   @Get('/getdatabricks')
-  getAll(): string {
+  getAll() {
     return this.appService.getAll();
   }
 }

@@ -8,10 +8,9 @@ export class AppService {
     writeFileSync(output, JSON.stringify(data));
   }
 
-  getAll(): string {
-    const result = readFileSync(`${process.cwd()}/data/data.json`).toString();
-    console.log(typeof result);
-    console.log('data:', result);
+  getAll() {
+    let result = readFileSync(`${process.cwd()}/data/data.json`).toString();
+    result = JSON.parse(result);
     return result;
   }
 }
