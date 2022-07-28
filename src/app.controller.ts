@@ -7,12 +7,13 @@ export class AppController {
 
   @Post('/savedatabricks')
   async saveAll(@Body('data') data: Array<any>) {
-    console.log('savedatabricks: ', data);
+    console.log(new Date().toLocaleString(), ' savedatabricks: ', data.length);
     return this.appService.saveAll(data);
   }
 
   @Get('/getdatabricks')
   getAll() {
+    console.log(new Date().toLocaleString(), ' getdatabricks: ');
     return this.appService.getAll();
   }
 }
