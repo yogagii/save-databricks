@@ -11,6 +11,12 @@ export class AppController {
     return this.appService.saveAll(data);
   }
 
+  @Post('/savesharepoint')
+  async saveOrigin(@Body('data') data: Array<any>) {
+    console.log(new Date().toLocaleString(), ' savesharepoint: ', data.length);
+    return this.appService.saveOrigin(data);
+  }
+
   @Get('/getdatabricks')
   getAll() {
     console.log(new Date().toLocaleString(), ' getdatabricks: ');

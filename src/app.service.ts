@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { writeFileSync, readFileSync } from 'fs';
 
 const output = `${process.cwd()}/data/data.json`;
+const input = `${process.cwd()}/data/list.json`;
 
 @Injectable()
 export class AppService {
@@ -14,13 +15,17 @@ export class AppService {
       const date = new Date(item['Filing Document Ready Date']);
       date.setMinutes(date.getMinutes() + 480);
       if (date.getTime() < date120.getTime()) {
-        console.log('before120data: ', item['Filing Document Ready Date']);
+        console.log('before120data: ', item);
         return true;
       }
       return false;
     });
     const newData = old.concat(data);
     writeFileSync(output, JSON.stringify(newData));
+  }
+
+  saveOrigin(data: Array<any>) {
+    writeFileSync(input, JSON.stringify(data));
   }
 
   getAll() {
